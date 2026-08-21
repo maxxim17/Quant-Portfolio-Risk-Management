@@ -36,7 +36,7 @@ def test_var_requires_enough_observations():
     with pytest.raises(ValueError):
         calculate_historical_var(
             returns,
-            confidence_level=0.95,
+     gel=0.95,
             window=250,
         )
 
