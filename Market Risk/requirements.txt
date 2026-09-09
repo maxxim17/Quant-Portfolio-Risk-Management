@@ -1,0 +1,11 @@
+# streamlit
+# yfinance
+# pandas
+# numpy
+# matplotlib
+# plotly
+# requests
+# pytest
+# streamlit
+# scipy
+# arch
