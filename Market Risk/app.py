@@ -1,9 +1,32 @@
 from __future__ import annotations
 
+
 import sys
 from pathlib import Path
+from turtle import st
 
 import streamlit as st
+
+from src.dashboard.garch_dashboard import render_garch_dashboard
+from src.dashboard.gjr_garch_dashboard import render_gjr_garch_dashboard
+
+selected_phase = st.sidebar.selectbox(
+    "Select Phase",
+    [
+        "Phase 1 - Data",
+        "Phase 2 - Cleaning",
+        "Phase 3 - Portfolio",
+        "Phase 4 - Historical VaR",
+        "Phase 5 - EWMA",
+        "Phase 6 - GARCH",
+        "Phase 7 - GJR-GARCH",
+    ],
+)
+
+if selected_phase == "Phase 7 - GJR-GARCH":
+    render_gjr_garch_dashboard()
+
+
 
 ROOT = Path(__file__).resolve().parent
 
