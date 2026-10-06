@@ -6,9 +6,16 @@ from pathlib import Path
 from turtle import st
 
 import streamlit as st
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from pathlib import Path
 
 from src.dashboard.garch_dashboard import render_garch_dashboard
 from src.dashboard.gjr_garch_dashboard import render_gjr_garch_dashboard
+from src.dashboard.backtesting_dashboard import (
+    render_backtesting_dashboard
+)
 
 selected_phase = st.sidebar.selectbox(
     "Select Phase",
@@ -20,11 +27,15 @@ selected_phase = st.sidebar.selectbox(
         "Phase 5 - EWMA",
         "Phase 6 - GARCH",
         "Phase 7 - GJR-GARCH",
+        "Phase 8 - VaR Backtesting",
     ],
 )
 
 if selected_phase == "Phase 7 - GJR-GARCH":
     render_gjr_garch_dashboard()
+
+elif selected_phase == "Phase 8 - VaR Backtesting":
+    render_backtesting_dashboard()
 
 
 
