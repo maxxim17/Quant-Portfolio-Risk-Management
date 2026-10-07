@@ -11,6 +11,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
 
+from src.dashboard.stress_testing_dashboard import (
+    show_stress_testing_dashboard,
+)
 
 from src.dashboard.model_comparison_dashboard import (
     show_model_comparison,
@@ -24,14 +27,16 @@ from src.dashboard.backtesting_dashboard import (
 selected_phase = st.sidebar.selectbox(
     "Select Phase",
     [
-        "Phase 1 - Data",
-        "Phase 2 - Cleaning",
-        "Phase 3 - Portfolio",
+        "Phase 1 - Data Collection",
+        "Phase 2 - Data Cleaning",
+        "Phase 3 - Portfolio Construction",
         "Phase 4 - Historical VaR",
         "Phase 5 - EWMA",
         "Phase 6 - GARCH",
         "Phase 7 - GJR-GARCH",
-        "Phase 8 - VaR Backtesting",
+        "Phase 8 - Backtesting",
+        "Phase 9 - Model Comparison",
+        "Phase 10 - Stress Testing",
     ],
 )
 
@@ -55,7 +60,10 @@ if selected_phase == "Phase 7 - GJR-GARCH":
 elif selected_phase == "Phase 8 - VaR Backtesting":
     render_backtesting_dashboard()
 
+elif selected_phase == "Phase 10 - Stress Testing":
 
+    show_stress_testing_dashboard()
+    
 
 ROOT = Path(__file__).resolve().parent
 
