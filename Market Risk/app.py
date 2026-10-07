@@ -11,6 +11,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
 
+
+from src.dashboard.model_comparison_dashboard import (
+    show_model_comparison,
+)
 from src.dashboard.garch_dashboard import render_garch_dashboard
 from src.dashboard.gjr_garch_dashboard import render_gjr_garch_dashboard
 from src.dashboard.backtesting_dashboard import (
@@ -30,6 +34,20 @@ selected_phase = st.sidebar.selectbox(
         "Phase 8 - VaR Backtesting",
     ],
 )
+
+selected_phase = st.sidebar.selectbox(
+    "Select Phase",
+    [
+        "Portfolio Construction",
+        "GARCH",
+        "GJR-GARCH",
+        "VaR Backtesting",
+        "Model Comparison",
+    ],
+)
+
+if selected_phase == "Model Comparison":
+    show_model_comparison()
 
 if selected_phase == "Phase 7 - GJR-GARCH":
     render_gjr_garch_dashboard()
