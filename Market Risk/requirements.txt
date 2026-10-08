@@ -1,11 +1,9 @@
-# streamlit
-# yfinance
-# pandas
 # numpy
-# matplotlib
-# plotly
-# requests
+# pandas
+# scipy
+# yfinance
+# arch
 # pytest
 # streamlit
-# scipy
-# arch
+# plotly
+# openpyxl
